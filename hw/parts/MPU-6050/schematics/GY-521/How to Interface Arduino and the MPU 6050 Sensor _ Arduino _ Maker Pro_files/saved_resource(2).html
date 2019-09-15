@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://maker.pro/arduino/tutorial/how-to-interface-arduino-and-the-mpu-6050-sensor -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>var inDapIF=true,inGptIF=true;</script></head><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><div style="display:inline"><script src="./jquery.min.js.download"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $('<br /><div id="wallpaperad_mobile" style="width:100%;text-align: center;"><a href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvCSH8Ja_ose5fjBYh70aQl2VhTtszMw2IZIxAoydF8LDKadar2aRUq547ICTbsY6-oqRpGv_Rxx8thjQ_sfU92mcst3ZgStDslJI-1WPAmMXxyB92GhAE5wF-yrnrTX3uvE4P3KAYgHs_Rp6N8saZEwLc0ZToOTIWH2sK1DZSFqN7n9tHip4CTatrnBsbaBdb9I8NPflFMhqN1ylAAP9-zGw-ha0SkXrqM4jza438TVhZz3dKVxxMyYdCBx0_ohgw7o3A&sig=Cg0ArKJSzDMuuQMo3GTZEAE&urlfix=1&adurl=https://ad.doubleclick.net/ddm/trackclk/N30602.2677211EETECH/B22200390.253145885;dc_trk_aid=449607874;dc_trk_cid=120422887;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=" target="_blank"><img src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDHsZOgdxABGAEyCIBIG7rJ8RCO"></a></div>').insertAfter($(window.parent.document).find("header"));        
+        } else {
+            var main = $(window.parent.document).find(".project-contents");
+
+            var height = main.height();
+
+            $('<div id="wallpaperad" style="background: #152D5D url(\'https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDH5ar8vQEQARgBMgi5KPWUsM18dA\') no-repeat center top; position:absolute; width:100%;z-index:0;cursor:pointer;height:' + height + 'px"></div>').insertAfter($(window.parent.document).find("header"));
+            //main.css("margin-top", "70px");
+            main.css("max-width", "1200px");
+            main.css("margin-left", "auto");
+            main.css("margin-right", "auto");
+
+            /* project / article specific */
+            $(window.parent.document).find(".project-contents .container").each(function() {
+                $(this).css("max-width", "1200px");
+                $(this).css("padding-left", "10px");
+                $(this).css("padding-right", "10px");
+                $(this).css("background-color",  "#fff");
+
+                $(window.parent.document).find(".project-contents #project-details, .project-contents #article-details").each(function() {
+                    $(this).css("margin-bottom", "-50px");
+                });
+            });
+
+            var scrolled = false;
+            $(window.parent, window.parent.document).scroll(function () {
+                if(scrolled === false) {
+                    height = main.height();
+                    $(window.parent.document).find("#wallpaperad").css("height", height+"px");
+                    scrolled = true;
+                }
+            });   
+
+
+
+            $("#wallpaperad", window.parent.document).click(function(event){
+                //window.open('https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvCSH8Ja_ose5fjBYh70aQl2VhTtszMw2IZIxAoydF8LDKadar2aRUq547ICTbsY6-oqRpGv_Rxx8thjQ_sfU92mcst3ZgStDslJI-1WPAmMXxyB92GhAE5wF-yrnrTX3uvE4P3KAYgHs_Rp6N8saZEwLc0ZToOTIWH2sK1DZSFqN7n9tHip4CTatrnBsbaBdb9I8NPflFMhqN1ylAAP9-zGw-ha0SkXrqM4jza438TVhZz3dKVxxMyYdCBx0_ohgw7o3A&sig=Cg0ArKJSzDMuuQMo3GTZEAE&urlfix=1&adurl=https://ad.doubleclick.net/ddm/trackclk/N30602.2677211EETECH/B22200390.253145885;dc_trk_aid=449607874;dc_trk_cid=120422887;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=', '_blank');
+                window.top.location.href = 'https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvCSH8Ja_ose5fjBYh70aQl2VhTtszMw2IZIxAoydF8LDKadar2aRUq547ICTbsY6-oqRpGv_Rxx8thjQ_sfU92mcst3ZgStDslJI-1WPAmMXxyB92GhAE5wF-yrnrTX3uvE4P3KAYgHs_Rp6N8saZEwLc0ZToOTIWH2sK1DZSFqN7n9tHip4CTatrnBsbaBdb9I8NPflFMhqN1ylAAP9-zGw-ha0SkXrqM4jza438TVhZz3dKVxxMyYdCBx0_ohgw7o3A&sig=Cg0ArKJSzDMuuQMo3GTZEAE&urlfix=1&adurl=https://ad.doubleclick.net/ddm/trackclk/N30602.2677211EETECH/B22200390.253145885;dc_trk_aid=449607874;dc_trk_cid=120422887;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=';
+            });
+        }
+    });
+</script>
+
+
+<div style="position: absolute; top: 0px; right: 0px; width: 1px; height: 1px; visibility: hidden; border: none;">
+<img src="./view(1)" style="display:none">
+    <script type="text/javascript">
+        var trackingPixel="https://ad.doubleclick.net/ddm/trackimp/N30602.2677211EETECH/B22200390.253145885;dc_trk_aid=449607874;dc_trk_cid=120422887;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=?";
+        if ( trackingPixel.indexOf("http")==0 ) {
+            document.write('<iframe src="' + trackingPixel + '" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>');
+        }
+
+        var SecondaryPixelImage="";
+        if ( SecondaryPixelImage.indexOf("http")==0 ) {
+            document.write('<img src="' + SecondaryPixelImage  + '" height="1" width="1" />');
+        }
+
+        var JSImpressionTagURL="";
+        if ( JSImpressionTagURL.indexOf("http")==0 ) {
+            var jsTag = document.createElement('script');
+            jsTag.setAttribute('src', JSImpressionTagURL);
+            jsTag.async = true;
+
+            window.parent.document.getElementsByTagName('head')[0].appendChild(jsTag);
+        }
+
+    </script><iframe src="./B22200390.html" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>
+</div>
+</div><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"key_value":[{"key":"qid","value":"CIXNivuj0-QCFUlUGAodImsFvA"}],"googMsgType":"adpnt"}','*');}</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:pixelated !important;z-index:2147483647;background-image:url(&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB/SURBVBjTbVAJDsAwCMIf8P/Xrh6obWaWMlOkCPBflnVwdwDj1k9yOucZbDBOv+GhMbjTLdbDlja2tjVPM2lKleLLN4rpotL2xwVpySE3jAlbDcKohqhZqy8xG3uMZDIkL6clPfuJ1/+Twt52J8h4gOVEHNS6t3aHzjvB9n3qA+dwBXO3Kh2HAAAAAElFTkSuQmCC&#39;) !important;"></div></body></html>

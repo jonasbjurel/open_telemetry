@@ -1,0 +1,9 @@
+[submodule "lib/MPU-9250/MPU9250"]
+	path = lib/MPU-9250/MPU9250
+	url = https://github.com/bolderflight/MPU9250.git
+[submodule "lib/filters/KalmanFilter"]
+	path = lib/filters/KalmanFilter
+	url = https://github.com/TKJElectronics/KalmanFilter.git
+[submodule "lib/MPU-6050/TinyMPU6050"]
+	path = lib/MPU-6050/TinyMPU6050
+	url = https://github.com/gabriel-milan/TinyMPU6050.git

@@ -7,3 +7,9 @@
 [submodule "lib/MPU-6050/TinyMPU6050"]
 	path = lib/MPU-6050/TinyMPU6050
 	url = https://github.com/gabriel-milan/TinyMPU6050.git
+[submodule "lib/BMP280/Adafruit_BMP280_Library"]
+	path = lib/BMP280/Adafruit_BMP280_Library
+	url = https://github.com/adafruit/Adafruit_BMP280_Library.git
+[submodule "src/coreNoStopRTOS"]
+	path = src/coreNoStopRTOS
+	url = https://github.com/jonasbjurel/coreNoStopRTOS.git

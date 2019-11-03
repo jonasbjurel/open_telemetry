@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="js-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen" href="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/application-9772bbd065beab478f1295d9009802bc9b09dbf651672030b6206ecaa3e05573.css" data-turbolinks-track="reload">
+<script type="text/javascript" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/308175db61"></script><script src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/nr-1130.min.js.download"></script><script type="text/javascript" async="" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/ec.js.download"></script><script type="text/javascript" async="" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/analytics.js.download"></script><script src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/js"></script>
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+
+
+
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"308175db61","applicationID":"54271218","transactionName":"cVZXRUFeWghRShtEVlVcSh5AWVkT","queueTime":1,"applicationTime":78,"agent":""}</script>
+<script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview",
+        "name": "Adafruit HUZZAH ESP8266 breakout",
+        "description": "Add Internet to your next project with an adorable, bite-sized WiFi microcontroller, at a price you like! The ESP8266 processor from Espressif is an 80 MHz microcontroller with a full WiFi front-end (both as client and access point) and TCP/IP stack with DNS support as well. While this chip has been very popular, its also been very difficult to use. Most of the low cost modules are not breadboard friendly, don&#39;t have an onboard 250mA 3.3V regulator or level shifting, and aren&#39;t CE or FCC emitter certified....UNTIL NOW!",
+        "publisher": "Adafruit",
+        "datePublished": "2015-04-24T18:24:48-04:00",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://learn.adafruit.com/search?q={search_term}",
+          "query-input": "required name=search_term"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "lady ada"
+        }
+      }
+    </script>
+<!--[if lte IE 9]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <![endif]-->
+<script>
+    window.rails_env = 'production';
+  </script>
+<script src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/application-04fc03a870ce632a9f3b.js.download" data-turbolinks-track="reload"></script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "https://learn.adafruit.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://learn.adafruit.com/search?q={search_term}",
+        "query-input": "required name=search_term"
+      }
+    }
+  </script>
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"308175db61","applicationID":"54271218","transactionName":"cVZXRUFeWghRShtVREFcTUIcQl4LQw==","queueTime":1,"applicationTime":28,"agent":""}</script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"308175db61","applicationID":"54271218","transactionName":"cVZXRUFeWghRShtEVlVcSh5AWVkT","queueTime":1,"applicationTime":204,"agent":""}</script><link rel="mask-icon" href="https://learn.adafruit.com/assets/adafruit_favicon-d77f206e6cc65b40101b6e5b8987f7c35cb6a283ea73c0adad50c37f7347c61a.svg" color="#000000"><link rel="shortcut icon" type="image/x-icon" href="https://learn.adafruit.com/assets/favicon-0c79bd4bc582e6d4cf3afe417bd1e28120527c09d92c08a6464690c5bf6b85f4.ico"><title>Overview | Adafruit HUZZAH ESP8266 breakout | Adafruit Learning System</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="TJr6NdZsglhN5xK0RRwloaxEOYO6WSqU7J2608gG9PmPDQBbflFaXlWIfQTczKQiRWjLdA7KRPDqDR6DHHoePA=="><link rel="alternate" type="application/atom+xml" title="ATOM" href="https://learn.adafruit.com/feed"><link rel="alternate" type="application/rss+xml" title="RSS" href="https://learn.adafruit.com/feed.rss"><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"><meta name="turbolinks-cache-control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="guide-title" content="Adafruit HUZZAH ESP8266 breakout"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@adafruit"><meta name="twitter:title" content="Adafruit HUZZAH ESP8266 breakout"><meta name="twitter:description" content="Adorable bite-sized WiFi microcontroller, at a price you like!"><meta name="twitter:image:src" content="https://cdn-learn.adafruit.com/guides/images/000/001/007/medium800/qt.jpg"><meta name="twitter:domain" content="https://learn.adafruit.com"><meta property="og:title" content="Adafruit HUZZAH ESP8266 breakout"><meta property="og:description" content="Add Internet to your next project with an adorable, bite-sized WiFi microcontroller, at a price you like! The ESP8266 processor from Espressif is an 80 MHz microcontroller with a full WiFi front-end (both as client and access point) and TCP/IP stack with DNS support as well. While this chip has been very popular, its also been very difficult to use. Most of the low cost modules are not breadboard friendly, don&#39;t have an onboard 250mA 3.3V regulator or level shifting, and aren&#39;t CE or FCC emitter certified....UNTIL NOW!"><meta property="og:type" content="website"><meta property="og:image" content="https://cdn-learn.adafruit.com/guides/images/000/001/007/medium800/qt.jpg"><meta property="og:url" content="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview"><meta property="og:site_name" content="Adafruit Learning System"></head>
+<body class="application pages show">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRPXBQ6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div id="outer-wrapper">
+<div id="inner-wrapper">
+<div id="messaging-wrapper" data-load="https://www.adafruit.com/api/multi_message.php"></div>
+<header id="adafruit-header">
+<div id="small-header">
+<div class="first-row">
+<div class="row-content">
+<a id="small-header-menu-button" class="menu-link" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview#small-header-nav">
+<i class="fa fa-bars"> </i>
+</a>
+<div class="small-header-logo">
+<a href="https://www.adafruit.com/">
+<img id="small-logo" height="50" width="50" alt="Adafruit Logo" title="Adafruit Logo" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_logo_small.png">
+</a> </div>
+<a class="small-header-cart" href="https://www.adafruit.com/shopping_cart">
+<span class="small-cart-count">0</span>
+<i class="fa fa-shopping-cart"></i>
+</a> </div>
+</div>
+<div class="second-row">
+<div id="small-search-wrapper">
+<div id="small-search-inner-wrapper">
+<form action="https://learn.adafruit.com/search" method="get">
+<label for="mobile-search" style="display:none;">Search</label>
+<input id="mobile-search" type="text" name="q" placeholder="Search Adafruit">
+<i class="fa fa-search"></i>
+</form>
+</div>
+</div>
+</div>
+<nav id="small-header-nav">
+<div class="block">
+<ul>
+<li>
+<a href="https://www.adafruit.com/categories">SHOP</a>
+</li>
+<li>
+<a href="https://learn.adafruit.com/">LEARN</a>
+</li>
+<li>
+<a href="https://blog.adafruit.com/">BLOG</a>
+</li>
+<li>
+<a href="https://forums.adafruit.com/">FORUMS</a>
+</li>
+<li>
+<a href="https://www.youtube.com/adafruit">VIDEOS</a>
+</li>
+<li>
+<a href="https://io.adafruit.com/">IO</a>
+</li>
+<li>
+<a href="https://learn.adafruit.com/users/sign_in">SIGN IN</a>
+</li>
+<li>
+<a class="close-btn" id="small-nav-close-button" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview#top">CLOSE MENU</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div id="large-header">
+<div class="first-row">
+<div class="row-content">
+<ul class="application-links">
+<li><a href="https://www.adafruit.com/">Shop</a></li>
+<li class="selected"><a href="https://learn.adafruit.com/">Learn</a></li>
+<li><a href="https://blog.adafruit.com/">Blog</a></li>
+<li><a href="https://forums.adafruit.com/">Forums</a></li>
+<li><a href="https://www.youtube.com/adafruit">Videos</a></li>
+<li><a href="https://www.adabox.com/">Adabox</a></li>
+<li><a href="https://io.adafruit.com/">IO</a></li>
+</ul>
+<div id="account">
+<span class="sign-out"><a href="https://learn.adafruit.com/users/sign_in">Sign In</a></span>
+<div class="cart">
+<a href="https://www.adafruit.com/shopping_cart">
+<i class="fa fa-shopping-cart"></i> 0
+</a> </div>
+</div>
+</div>
+</div>
+<div class="second-row">
+<div class="row-content">
+<div class="left-content">
+<div id="logo">
+<a href="https://www.adafruit.com/">
+<img alt="Adafruit Logo" title="Adafruit Logo" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_logo_small.png">
+</a> </div>
+<ul class="main-nav-links">
+<li class="dropdown with-overlay">
+<div class="dropdown-label">Explore &amp; Learn</div>
+<div class="dropdown-container">
+<div class="dropdown-content">
+<div class="flyouts">
+<div class="flyout">
+<div class="container">
+<div class="flyout-content row">
+<div class="column col-lg-6 col-md-6 col-sm-6">
+<div class="title categories">
+GUIDE CATEGORIES <br class="hidden-lg"><a href="https://learn.adafruit.com/search">(SEE ALL 1992)</a>
+</div>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6">
+<ul class="links categories">
+<li><a href="https://learn.adafruit.com/category/adabox">ADABOX (57)</a></li>
+<li><a href="https://learn.adafruit.com/category/adafruit-products">ADAFRUIT PRODUCTS (314)</a></li>
+<li><a href="https://learn.adafruit.com/category/arduino">ARDUINO COMPATIBLES (409)</a></li>
+<li><a href="https://learn.adafruit.com/category/breakout-boards">BREAKOUT BOARDS (165)</a></li>
+<li><a href="https://learn.adafruit.com/category/circuit-playground">CIRCUIT PLAYGROUND (263)</a></li>
+<li><a href="https://learn.adafruit.com/category/circuitpython">CIRCUITPYTHON (229)</a></li>
+<li><a href="https://learn.adafruit.com/category/collins-lab">COLLIN'S LAB (7)</a></li>
+<li><a href="https://learn.adafruit.com/category/components">COMPONENTS (113)</a></li>
+<li><a href="https://learn.adafruit.com/category/community-support">COMMUNITY SUPPORT (27)</a></li>
+<li><a href="https://learn.adafruit.com/category/customer-projects">CUSTOMER &amp; PARTNER PROJECTS (38)</a></li>
+<li><a href="https://learn.adafruit.com/category/development-boards">DEVELOPMENT BOARDS (57)</a></li>
+<li><a href="https://learn.adafruit.com/category/educators">EDUCATORS (53)</a></li>
+<li><a href="https://learn.adafruit.com/category/el">EL WIRE/TAPE/PANEL (13)</a></li>
+<li><a href="https://learn.adafruit.com/category/feather">FEATHER (202)</a></li>
+<li><a href="https://learn.adafruit.com/category/hacks">HACKS (65)</a></li>
+<li><a href="https://learn.adafruit.com/category/internet-of-things-iot">INTERNET OF THINGS - IOT (215)</a></li>
+<li><a href="https://learn.adafruit.com/category/lcds-and-displays">LCDS &amp; DISPLAYS (244)</a></li>
+</ul>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+<ul class="links categories">
+<li><a href="https://learn.adafruit.com/category/leds">LEDS (391)</a></li>
+<li><a href="https://learn.adafruit.com/category/maker-business">MAKER BUSINESS (34)</a></li>
+<li><a href="https://learn.adafruit.com/category/micro-bit">MICRO:BIT (12)</a></li>
+<li><a href="https://learn.adafruit.com/category/microcontrollers">MICROCONTROLLERS (160)</a></li>
+<li><a href="https://learn.adafruit.com/category/programming">PROGRAMMING (272)</a></li>
+<li><a href="https://learn.adafruit.com/category/projects">PROJECTS (254)</a></li>
+<li><a href="https://learn.adafruit.com/category/raspberry-pi">RASPBERRY PI (368)</a></li>
+<li><a href="https://learn.adafruit.com/category/robotics">ROBOTICS &amp; CNC (88)</a></li>
+<li><a href="https://learn.adafruit.com/category/sensors">SENSORS (391)</a></li>
+<li><a href="https://learn.adafruit.com/category/tools">TOOLS (70)</a></li>
+<li><a href="https://learn.adafruit.com/category/wearables">WEARABLES (243)</a></li>
+<li><a href="https://learn.adafruit.com/category/3d-printing">3D PRINTING (318)</a></li>
+<li><a href="https://learn.adafruit.com/category/crickit">CRICKIT (53)</a></li>
+<li><a href="https://learn.adafruit.com/category/makecode">MAKECODE (159)</a></li>
+<li><a href="https://learn.adafruit.com/category/trellis">TRELLIS (33)</a></li>
+<li><a href="https://learn.adafruit.com/category/machine-learning">MACHINE LEARNING (1)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="column col-lg-3 col-md-3 col-sm-3">
+<div class="title new">
+NEW GUIDES <br class="hidden-lg"><a href="https://learn.adafruit.com/guides/latest">(SEE ALL 101)</a>
+</div>
+<ul class="links new">
+<li>
+<a href="https://learn.adafruit.com/glowing-interactive-crystal-staff"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/crystalstaff.gif" alt="Glowing Interactive Crystal Staff "></a>
+<a href="https://learn.adafruit.com/glowing-interactive-crystal-staff" class="name">GLOWING INTERACTIVE CRYSTAL STAFF </a>
+<div class="clear"></div>
+</li>
+<li>
+<a href="https://learn.adafruit.com/3d-printed-heart-capacitive-touch"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/Heart_hero_red480.2019-09-12_17_20_22.gif" alt="Capacitive Touch Pulsing Heart"></a>
+<a href="https://learn.adafruit.com/3d-printed-heart-capacitive-touch" class="name">CAPACITIVE TOUCH PULSING HEART</a>
+<div class="clear"></div>
+</li>
+<li>
+<a href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/ezgif-5-471a13c80f75.gif" alt="Adafruit Circuit Playground Bluefruit"></a>
+<a href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit" class="name">ADAFRUIT CIRCUIT PLAYGROUND BLUEFRUIT</a>
+<div class="clear"></div>
+</li>
+<li>
+<a href="https://learn.adafruit.com/adabox013"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/ADABOX_013_BOX2.jpg" alt="AdaBox 013"></a>
+ <a href="https://learn.adafruit.com/adabox013" class="name">ADABOX 013</a>
+<div class="clear"></div>
+</li>
+</ul>
+</div>
+<div class="column col-lg-3 col-md-3 col-sm-3">
+<div class="title featured">
+FEATURED GUIDES <br class="hidden-lg"><a href="https://learn.adafruit.com/guides/featured">(SEE ALL 39)</a>
+</div>
+<ul class="links featured">
+<li>
+<a href="https://learn.adafruit.com/media-dial"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/hero-loop.gif" alt="CircuitPython Media Dial"></a>
+<a href="https://learn.adafruit.com/media-dial" class="name">CIRCUITPYTHON MEDIA DIAL</a>
+<div class="clear"></div>
+</li>
+<li>
+<a href="https://learn.adafruit.com/neopixel-led-harness-bra"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/ezgif.com-gif-maker_(1).gif" alt="LED Harness Bra"></a>
+<a href="https://learn.adafruit.com/neopixel-led-harness-bra" class="name">LED HARNESS BRA</a>
+<div class="clear"></div>
+</li>
+<li>
+<a href="https://learn.adafruit.com/cartoon-network-makecode-garnet-s-palm-gems-from-steven-universe"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/GARNET_palmAnim_whiteBG.gif" alt="Cartoon Network MakeCode: Garnet&#39;s Palm Gems from Steven Universe"></a>
+<a href="https://learn.adafruit.com/cartoon-network-makecode-garnet-s-palm-gems-from-steven-universe" class="name">CARTOON NETWORK MAKECODE: GARNET'S PALM GEMS FROM STEVEN UNIVERSE</a>
+<div class="clear"></div>
+</li>
+<li>
+<a href="https://learn.adafruit.com/iot-pyportal-data-logger-adafruitio-circuitpython"><img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/ezgif.com-video-to-gif_(8)_copy.gif" alt="PyPortal IoT Data Logger with Analog Devices ADT7410, Adafruit IO and CircuitPython"></a>
+<a href="https://learn.adafruit.com/iot-pyportal-data-logger-adafruitio-circuitpython" class="name">PYPORTAL IOT DATA LOGGER WITH ANALOG DEVICES ADT7410, ADAFRUIT IO AND CIRCUITPYTHON</a>
+<div class="clear"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="right-content">
+<div class="search-wrapper">
+<form action="https://learn.adafruit.com/search" method="get">
+<label for="search" style="display:none;">Search</label>
+<input id="search" type="text" name="q" autocomplete="off" data-page="" data-app-id="W9DMM4OTH0" data-app-key="e613bcda3453b9ef887e2724362f9e57" data-app-index="learn_guides_production" data-app-uri="https://learn.adafruit.com">
+<i class="fa fa-search"></i>
+<input type="submit" style="visibility: hidden; position: fixed;">
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div id="main-content">
+<div id="page-wrapper" class="">
+<article id="content-wrapper" class="double-sidebar-layout" data-page-id="5536" data-guide-id="1007">
+<div class="content">
+<div class="sidebar-left-wrapper">
+<div class="sidebar-left-content" data-clampedwidth=".sidebar-left-wrapper" style="width: 245.979px;">
+<nav class="sidebar-left">
+<div class="title-bar">
+<div class="image-container">
+<img class="image-preview" data-error="/assets/missing%2Fmissing.png" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/qt.jpg">
+</div>
+<div class="title">
+<h1><a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview">Adafruit HUZZAH ESP8266 breakout</a></h1>
+<span class="page-tagline"><a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview">Adorable bite-sized WiFi microcontroller, at a price you like!</a></span>
+</div>
+</div>
+<ul class="page-parent nav">
+<li class="parent  active">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview">Overview</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/pinouts">Pinouts</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/assembly">Assembly</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-nodemcu-lua">Using NodeMCU Lua</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide">Using Arduino IDE</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/other-options">Other Options</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/downloads">Downloads</a>
+</li>
+<li class="parent  ">
+<a class="published" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/faq">ESP8266 F.A.Q.</a>
+</li>
+<li class="single-page-spacer"></li>
+<li class="single-page-link ">
+<a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/featured_products">Featured Products</a>
+</li>
+<li class="single-page-link"><a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout?view=all">Single Page</a></li>
+<li><a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-huzzah-esp8266-breakout.pdf?timestamp=1568658264">Download PDF</a></li>
+</ul>
+</nav>
+<header class="sidebar-meta hidden-xs">
+<h4>Contributors</h4>
+<div><a href="https://learn.adafruit.com/users/adafruit2">lady ada</a></div>
+</header>
+<header class="sidebar-meta hidden-xs">
+<a class="feedback-link" title="Feedback? Corrections?" rel="nofollow" data-remote="true" data-method="get" href="https://learn.adafruit.com/pages/5536/settings_modal">
+Feedback? Corrections?
+</a> </header>
+</div>
+</div>
+<div class="main-content">
+<div id="categories">
+<span class="category ">
+<a href="https://learn.adafruit.com/category/adafruit-products">ADAFRUIT PRODUCTS</a>
+</span>
+<span class="category child-category">
+<a href="https://learn.adafruit.com/category/internet-of-things-iot">INTERNET OF THINGS - IOT</a>
+<span class="category-link-spacer">/</span>
+<a href="https://learn.adafruit.com/category/wireless">WIRELESS</a>
+</span>
+<span class="category child-category">
+<a href="https://learn.adafruit.com/category/breakout-boards">BREAKOUT BOARDS</a>
+<span class="category-link-spacer">/</span>
+<a href="https://learn.adafruit.com/category/wifi">WIFI</a>
+</span>
+<span id="guide-favorite">
+<a class="favorites-link category right red" title="" data-toggle="tooltip" data-placement="left" data-remote="true" rel="nofollow" data-method="post" href="https://learn.adafruit.com/guides/1007/favorites.js" data-original-title="Favorite this guide?">
+<i class="fa fa-heart-o"></i>
+</a></span>
+</div>
+<div class="page-title-wrapper">
+<h1 class="headline">
+<span id="overview">Overview</span>
+</h1>
+<div class="author">by
+<a href="https://learn.adafruit.com/users/adafruit2">
+<span class="name">lady ada</span>
+</a> </div>
+</div>
+<div class="page-content">
+<div class="">
+<div class="row-fluid build-image">
+<a href="https://learn.adafruit.com/assets/24792">
+<img class="24792-asset img-responsive" srcset="https://cdn-learn.adafruit.com/assets/assets/000/024/792/medium260/adafruit_products_2471_iso_assembled_01_ORIG.jpg?1429908417 260w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/792/medium640/adafruit_products_2471_iso_assembled_01_ORIG.jpg?1429908417 640w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/792/medium800/adafruit_products_2471_iso_assembled_01_ORIG.jpg?1429908417 800w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/792/large1024/adafruit_products_2471_iso_assembled_01_ORIG.jpg?1429908417 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, (max-width: 1365px) 47vw, 750px" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_products_2471_iso_assembled_01_ORIG.jpg" alt="adafruit_products_2471_iso_assembled_01_ORIG.jpg">
+<span class="image-expand"><i class="fa fa-search-plus"></i></span>
+</a> </div>
+<div class="row-fluid build-text">
+<p>Add Internet to your next project with an adorable, bite-sized WiFi microcontroller, at a price you like! The ESP8266 processor from Espressif is an 80 MHz microcontroller with a full WiFi front-end (both as client and access point) and TCP/IP stack with DNS support as well. While this chip has been very popular, it's also been very difficult to use. Most of the low cost modules are not breadboard friendly, don't have an onboard 500mA 3.3V regulator or level shifting, and aren't CE or FCC emitter certified....<strong>UNTIL NOW!</strong></p>
+</div>
+<div class="row-fluid build-image">
+<a href="https://learn.adafruit.com/assets/24794">
+<img class="24794-asset img-responsive" srcset="https://cdn-learn.adafruit.com/assets/assets/000/024/794/medium260/adafruit_products_2471_top_180rotated_ORIG.jpg?1429909187 260w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/794/medium640/adafruit_products_2471_top_180rotated_ORIG.jpg?1429909187 640w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/794/medium800/adafruit_products_2471_top_180rotated_ORIG.jpg?1429909187 800w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/794/large1024/adafruit_products_2471_top_180rotated_ORIG.jpg?1429909187 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, (max-width: 1365px) 47vw, 750px" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_products_2471_top_180rotated_ORIG.jpg" alt="adafruit_products_2471_top_180rotated_ORIG.jpg">
+<span class="image-expand"><i class="fa fa-search-plus"></i></span>
+</a> </div>
+<div class="row-fluid build-text">
+<p>The HUZZAH ESP8266 breakout is what we designed to make working with this chip super easy and a lot of fun. We took a certified module with an onboard antenna, and plenty of pins, and soldered it onto our designed breakout PCBs. We added in:</p>
+<ul>
+<li>Reset button</li>
+<li>User button that can also put the chip into bootloading mode,</li>
+<li>Red LED you can blink</li>
+<li>Level shifting on the UART and reset pin</li>
+<li>3.3V out, 500mA regulator (you'll want to assume the ESP8266 can draw up to 250mA so budget accordingly)</li>
+<li>Two diode-protected power inputs (one for a USB cable, another for a battery)</li>
+</ul>
+<p>The module itself is FCC certified and contains the ESP8266 chip with&nbsp;64 KiB of instruction RAM, 96 KiB of data RAM, and 4 MB of QIO FLASH (32 Megabits)</p>
+</div>
+<div class="row-fluid build-image">
+<a href="https://learn.adafruit.com/assets/24795">
+<img class="24795-asset img-responsive" srcset="https://cdn-learn.adafruit.com/assets/assets/000/024/795/medium260/adafruit_products_2471_iso_breadboard_demo_ORIG.jpg?1429909446 260w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/795/medium640/adafruit_products_2471_iso_breadboard_demo_ORIG.jpg?1429909446 640w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/795/medium800/adafruit_products_2471_iso_breadboard_demo_ORIG.jpg?1429909446 800w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/795/large1024/adafruit_products_2471_iso_breadboard_demo_ORIG.jpg?1429909446 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, (max-width: 1365px) 47vw, 750px" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_products_2471_iso_breadboard_demo_ORIG.jpg" alt="adafruit_products_2471_iso_breadboard_demo_ORIG.jpg">
+<span class="image-expand"><i class="fa fa-search-plus"></i></span>
+</a> </div>
+<div class="row-fluid build-text">
+<p>Two parallel, breadboard-friendly breakouts on either side give you access to:</p>
+<ul>
+<li>1 x Analog input (1.0V max)</li>
+<li>9 x GPIO (3.3V logic), which can also be used for I2C or SPI</li>
+<li>2 x UART pins</li>
+<li>2 x 3-6V power inputs, reset, enable, LDO-disable, 3.3V output</li>
+</ul>
+<p>One breakout at the end has an "FTDI" pinout so you can plug in an FTDI or console cable to upload software and read/write debugging information via the UART. When you're done with your coding, remove the cable, and this little module can be embeded into your project box.</p>
+</div>
+<div class="row-fluid build-image">
+<a href="https://learn.adafruit.com/assets/24793">
+<img class="24793-asset img-responsive" srcset="https://cdn-learn.adafruit.com/assets/assets/000/024/793/medium260/adafruit_products_2471_demo_ORIG.jpg?1429908458 260w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/793/medium640/adafruit_products_2471_demo_ORIG.jpg?1429908458 640w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/793/medium800/adafruit_products_2471_demo_ORIG.jpg?1429908458 800w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/793/large1024/adafruit_products_2471_demo_ORIG.jpg?1429908458 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, (max-width: 1365px) 47vw, 750px" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_products_2471_demo_ORIG.jpg" alt="adafruit_products_2471_demo_ORIG.jpg">
+<span class="image-expand"><i class="fa fa-search-plus"></i></span>
+</a> </div>
+<div class="row-fluid build-text">
+<p><a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-nodemcu-lua">Each module comes pre-loaded with NodeMCU's Lua interpreter (NodeMCU 0.9.5 build 20150318 / Lua 5.1.4 to be specific)</a>, you can run commands, and 'save' Lua programs directly to the module's Flash using a USB-Serial converter cable.</p>
+<p>But, if you'd like, you can skip Lua and <a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide">go direct to using the Arduino IDE. Once you download the ESP8266 core, you can treat it just like a microcontroller+WiFi board, no other processors needed</a>!</p>
+</div>
+<div class="row-fluid build-image">
+<a href="https://learn.adafruit.com/assets/24796">
+<img class="24796-asset img-responsive" srcset="https://cdn-learn.adafruit.com/assets/assets/000/024/796/medium260/adafruit_products_2471_kit_ORIG.jpg?1429910218 260w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/796/medium640/adafruit_products_2471_kit_ORIG.jpg?1429910218 640w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/796/medium800/adafruit_products_2471_kit_ORIG.jpg?1429910218 800w,
+               https://cdn-learn.adafruit.com/assets/assets/000/024/796/large1024/adafruit_products_2471_kit_ORIG.jpg?1429910218 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, (max-width: 1365px) 47vw, 750px" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/adafruit_products_2471_kit_ORIG.jpg" alt="adafruit_products_2471_kit_ORIG.jpg">
+<span class="image-expand"><i class="fa fa-search-plus"></i></span>
+</a> </div>
+<div class="row-fluid build-text">
+<p>Each order comes with one assembled and tested HUZZAH ESP8266 breakout board, and a stick of 0.1" header that you can solder on and plug the breakout into a breadboard. A soldering iron and solder is required for that, and aren't included. <strong>You'll also need a USB-serial cable</strong> such as a <a href="https://www.adafruit.com/product/954">USB console cable (Windows only)</a>,&nbsp; <a href="https://www.adafruit.com/products/284">FTDI Friend (any OS)</a>, or&nbsp;<a href="https://www.adafruit.com/products/70">FTDI cable (any OS) </a>to upload software to the HUZZAH ESP8266!</p>
+<p><em><a href="http://www.esp8266.com/">Don't forget to visit esp8266.com for the latest and greatest in ESP8266 news, software and gossip!</a></em></p>
+</div>
+</div>
+<div class="page-navigation">
+<a class="next-page" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/pinouts">
+Pinouts<i class="fa fa-chevron-right"></i>
+</a> <div class="clear"></div>
+</div>
+<span class="page-last-updated">
+This guide was first published on Apr 24, 2015. It was last
+updated on Apr 24, 2015.
+</span>
+<span class="page-last-updated">
+This page (Overview) was last updated on Sep 15, 2019.
+</span>
+</div>
+</div>
+<div class="sidebar-right-wrapper">
+<div class="sidebar-right-content">
+<div class="featured-products">
+<div class="product-wrapper">
+<a href="https://www.adafruit.com/product/2471">
+<div class="product-image">
+<img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/2471-10.jpg" alt="" height="233" class="img-responsive" data-error="/assets/missing%2Fmissing.png">
+</div>
+<div class="product-details">
+<div class="product-title">Adafruit HUZZAH ESP8266 Breakout</div>
+<span class="product-price">$9.95</span>
+</div>
+</a> <div class="product-purchase-link">
+<a id="2471-product" class="product-buy btn-primary " data-pid="2471" data-qty="1" data-name="Adafruit HUZZAH ESP8266 Breakout" href="https://www.adafruit.com/product/2471">Add to Cart</a>
+</div>
+</div>
+<div class="product-wrapper">
+<a href="https://www.adafruit.com/product/954">
+<div class="product-image">
+<img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/954-02.jpg" alt="" height="233" class="img-responsive" data-error="/assets/missing%2Fmissing.png">
+</div>
+<div class="product-details">
+<div class="product-title">USB to TTL Serial Cable - Debug / Console Cable for Raspberry Pi</div>
+<span class="product-price"></span>
+</div>
+</a> <div class="product-purchase-link">
+<a id="954-product" class="notify product-buy btn-primary " data-pid="954" data-qty="1" data-name="USB to TTL Serial Cable - Debug / Console Cable for Raspberry Pi" href="https://www.adafruit.com/product/954">Out of Stock</a>
+</div>
+</div>
+<div class="product-wrapper">
+<a href="https://www.adafruit.com/product/70">
+<div class="product-image">
+<img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/70-03.jpg" alt="" height="233" class="img-responsive" data-error="/assets/missing%2Fmissing.png">
+</div>
+<div class="product-details">
+<div class="product-title">FTDI Serial TTL-232 USB Cable</div>
+<span class="product-price"></span>
+</div>
+</a> <div class="product-purchase-link">
+<a id="70-product" class="notify product-buy btn-primary " data-pid="70" data-qty="1" data-name="FTDI Serial TTL-232 USB Cable" href="https://www.adafruit.com/product/70">Out of Stock</a>
+</div>
+</div>
+<div class="product-wrapper">
+<a href="https://www.adafruit.com/product/284">
+<div class="product-image">
+<img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/284-00.jpg" alt="" height="233" class="img-responsive" data-error="/assets/missing%2Fmissing.png">
+</div>
+<div class="product-details">
+<div class="product-title">FTDI Friend + extras</div>
+<span class="product-price">$14.75</span>
+</div>
+</a> <div class="product-purchase-link">
+<a id="284-product" class="product-buy btn-primary " data-pid="284" data-qty="1" data-name="FTDI Friend + extras" href="https://www.adafruit.com/product/284">Add to Cart</a>
+</div>
+</div>
+<div class="product-wrapper">
+<a href="https://www.adafruit.com/product/2680">
+<div class="product-image">
+<img src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/2680-01.jpg" alt="" height="233" class="img-responsive" data-error="/assets/missing%2Fmissing.png">
+</div>
+<div class="product-details">
+<div class="product-title">Huzzah! Adafruit.io Internet of Things Feather ESP8266</div>
+<span class="product-price">$37.50</span>
+</div>
+</a> <div class="product-purchase-link">
+<a id="2680-product" class="product-buy btn-primary " data-pid="2680" data-qty="1" data-name="Huzzah! Adafruit.io Internet of Things Feather ESP8266" href="https://www.adafruit.com/product/2680">Add to Cart</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div class="readable">
+<div class="related-guides-wrapper">
+<div class="guide-group-preview">
+<div class="group-preview-header">
+<h3>
+Related Guides
+</h3>
+</div>
+<div class="guide-group">
+<div class="guide-preview">
+<div class="image-container">
+<a href="https://learn.adafruit.com/esp8266-temperature-slash-humidity-webserver">
+<img class="image-preview" data-error="/assets/missing%2Fmissing.png" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/ESP8266.jpg">
+<div class="tagline">
+Using the ESP8266 as a microcontroller as well as a low cost wifi server.
+</div>
+</a> </div>
+<div class="title">
+<a href="https://learn.adafruit.com/esp8266-temperature-slash-humidity-webserver">
+ESP8266 Temperature / Humidity Webserver
+</a> </div>
+<div class="author">by
+<a href="https://learn.adafruit.com/users/MikeBarela">
+<span class="name">Mike Barela</span>
+</a> </div>
+</div>
+<div class="guide-preview">
+<div class="image-container">
+<a href="https://learn.adafruit.com/adafruit-io-basics-digital-input">
+<video class="video-preview" preload="auto" muted="muted" loop="loop" autoplay="autoplay" data-error="/assets/missing%2Fmissing.png">
+<source src="https://cdn-learn.adafruit.com/guides/cropped_images/000/000/997/medium640mp4/button.mp4?1520543139">
+<source src="https://cdn-learn.adafruit.com/guides/cropped_images/000/000/997/medium640webm/button.webm?1520543139" type="video/webm; codecs=vp8,vorbis">
+Your browser does not support the video tag.
+</video>
+<div class="tagline">
+Reach out and touch Adafruit IO!
+</div>
+</a> </div>
+<div class="title">
+<a href="https://learn.adafruit.com/adafruit-io-basics-digital-input">
+Adafruit IO Basics: Digital Input
+</a> </div>
+<div class="author">by
+<a href="https://learn.adafruit.com/users/jwcooper">
+<span class="name">Justin Cooper</span>
+</a> </div>
+</div>
+<div class="guide-preview">
+<div class="image-container">
+<a href="https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget">
+<img class="image-preview" data-error="/assets/missing%2Fmissing.png" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/raspberry_pi_2885-04.jpg">
+<div class="tagline">
+Go Go Gadget Pi Zero
+</div>
+</a> </div>
+<div class="title">
+<a href="https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget">
+Turning your Raspberry PI Zero into a USB Gadget
+</a> </div>
+<div class="author">by
+<a href="https://learn.adafruit.com/users/adafruit2">
+<span class="name">lady ada</span>
+</a> </div>
+</div>
+<div class="guide-preview">
+<div class="image-container">
+<a href="https://learn.adafruit.com/dash-hacking-bare-metal-stm32-programming">
+<img class="image-preview" data-error="/assets/missing%2Fmissing.png" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/20150807_0003.jpg">
+<div class="tagline">
+How to disassemble an Amazon Dash button and reprogram its STM32 processor!
+</div>
+</a> </div>
+<div class="title">
+<a href="https://learn.adafruit.com/dash-hacking-bare-metal-stm32-programming">
+Dash Hacking: Bare-Metal STM32 Programming
+</a> </div>
+<div class="author">by
+<a href="https://learn.adafruit.com/users/tdicola">
+<span class="name">Tony DiCola</span>
+</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-spacer"></div>
+</div>
+<div class="modal fade" id="notify-modal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview#" class="close" data-dismiss="modal">×</a>
+<h5>OUT OF STOCK NOTIFICATION</h5>
+</div>
+<div class="modal-body">
+<p class="notify-modal-form-header"></p>
+<div class="notify-modal-products"></div>
+<form id="notify-modal-form" name="back_in_stock_notification">
+<p class="notify-modal-form-notice"></p>
+<div class="notify-modal-break"></div>
+<div class="form-group">
+<label class="inputLabel" for="name">YOUR NAME</label>
+<input type="text" size="25" maxlength="64" name="name" value="">
+</div>
+<div class="form-group">
+<label class="inputLabel" for="email">YOUR EMAIL</label>
+<input type="email" size="25" maxlength="96" name="email" value="">
+</div>
+<input type="hidden" name="notify_me" value="true">
+</form>
+<div id="notify-modal-success" style="display:none">
+<p>You have been successfully subscribed to the Notification List for this product and will therefore receive an e-mail from us when it is back in stock!</p>
+<p>For security reasons, an e-mail has been sent to you acknowledging your subscription. Please remember that this subscription will not result in you receiving any e-mail from us about anything other than the restocking of this item.</p>
+<p>If, for any reason, you would like to unsubscribe from the Notification List for this product you will find details of how to do so in the e-mail that has just been sent to you!</p>
+</div>
+</div>
+<div class="modal-footer">
+<a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview#" id="close-notify" style="display: none" data-dismiss="modal" data-target="#notify-modal">CLOSE</a>
+<a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview#" id="submit-notify" rel="nofollow" class="blue-button">NOTIFY ME</a>
+</div>
+</div>
+</div>
+</div>
+<div id="remote-modal"></div>
+</div>
+<footer id="adafruit-footer">
+<div id="footer-content">
+<div class="row">
+<div class=" col-lg-6 col-md-6 col-sm-4 col-xs-12">
+<nav>
+<ul>
+<li><a href="https://www.adafruit.com/contact_us">CONTACT</a></li>
+<li><a href="https://www.adafruit.com/support">SUPPORT</a>
+</li><li><a href="https://www.adafruit.com/distributors">DISTRIBUTORS</a></li>
+<li><a href="https://www.adafruit.com/educators">EDUCATORS</a></li>
+<li><a href="https://jobs.adafruit.com/">JOBS</a></li>
+<li><a href="https://www.adafruit.com/faq">FAQ</a></li>
+<li><a href="https://www.adafruit.com/shippinginfo/">SHIPPING &amp; RETURNS</a></li>
+<li><a href="https://www.adafruit.com/terms_of_service/">TERMS OF SERVICE</a></li>
+<li><a href="https://www.adafruit.com/privacy">PRIVACY &amp; LEGAL</a></li>
+<li><a href="https://www.adafruit.com/about">ABOUT US</a></li>
+</ul>
+</nav>
+<div id="footer-copyright">
+<a href="http://nytm.org/made-in-nyc/">ENGINEERED IN NYC</a> <span>Adafruit&nbsp;®</span>
+</div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-8 hidden-xs">
+<div id="footer-quote" class="">
+"If I have seen further it is by standing on the shoulders of giants"
+<span class="quote-author">- <a href="http://en.wikipedia.org/wiki/Isaac_Newton">Isaac Newton</a></span>
+</div>
+</div>
+<div id="footer-seals">
+<img class="img-responsive" src="./Overview _ Adafruit HUZZAH ESP8266 breakout _ Adafruit Learning System_files/seals_2x.jpg">
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+
+</body></html>

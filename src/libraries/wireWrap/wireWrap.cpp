@@ -4,17 +4,11 @@
 // Wire/I2c Channel assignment 
 //static uint8_t chStatus a descriptor of active I2C channels [0..7] constructs pointing to constructs of [SDA,SCL,*users], where users is a linked list: [*prev, *current, *next]
 // pointing at these constructs [wireWrap objHandle]
- 
+
 //Transaction queues
 //7 prio queues with a [0..7] constructs for every prio, every queue has a linked [*prev, *current, *next] construct which points to constructs of work orders [Order status........]
 // of every queue have a linked list of items in queue order: transactio....
 
-
-
-
-
-//Begin of CPP file
-//#include <wireWrap.h>
 
 /* ***********************************************************************************************
    initialization of static wireWrap class static data                                           */
@@ -32,16 +26,18 @@ uint8_t channelStatus = _UNINIT
 
 /* ********************************************************************************************* */
 /* wireWrap class object constructor                                                             */
-wireWrap::wireWrap(){ 
+wireWrap::wireWrap() {
+	wireMutex = xSemaphoreCreateRecursiveMutex();
 }
 
 /* ********************************************************************************************* */
 /* wireWrap class object destructor                                                              */
 // Todo
 wireWrap::~wireWrap() {
+	initd.taskPanic();
 }
 /* ********************************************************************************************* */
-/*                      ***END***Class MANAGEMENT functions***END**                              */ 
+/*                      ***END***Class MANAGEMENT functions***END**                              */
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
 
@@ -56,76 +52,118 @@ wireWrap::~wireWrap() {
 /* ********************************************************************************************* */
 /* wireWrap request channel init function                                                        */
 /* Type: User                                                                                    */
-/* Description: TODO                                                                             */
-uint8_t wireWrap::chInit(uint8_t sda,  uint8_t scl){
-	if (uint8_t res = createChannel(sda, scl)){
+/* Description: TODO    */
+
+uint8_t wireWrap::wireInit(uint8_t sda, uint8_t scl, wireSpeed_t wireSpeed, wireMode_t wireMode = _HW_) {
+	xSemaphoreTakeRecursive(globalWireMutex);
+	if (wireProperties.wireState ~= _WW_WIRE_UNINIT_) {
+		xSemaphoreGiveRecursive(globalWireMutex);
+		return(_WW_RESOURCE_CONFLICT_);
+	}
+	if (noOfCreatedWires >= _MAX_NO_WIRES_ - 1) {
+		xSemaphoreGiveRecursive(globalWireMutex);
+		return(_WW_OUT_OF_RESOURCES_);
+	}
+	if (uint8_t res = createWire(uint8_t sda, uint8_t scl, wireSpeed_t wireSpeed, wireMode_t wireMode = _HW_)) {
+		xSemaphoreGiveRecursive(globalWireMutex);
 		return(res);
 	}
-	_status = _INIT;
-	return(_WW_OK);
- }
+	noOfCreatedWires++;
+	this.wireProperties.wireState ~= _WW_WIRE_IDLE_
+		xSemaphoreGiveRecursive(globalWireMutex);
+	return(_WW_OK_);
+}
+
+/* ********************************************************************************************* */
+/* wireStatus request wire status function                                                       */
+/* Type: User                                                                                    */
+/* Description: TODO                                                                             */
+
+wireState_t wireWrap::wireStatus() {
+	return(wireProperties.wireState);
+}
 
 /* ********************************************************************************************* */
 /* wireWrap request transaction function                                                         */
 /* Type: User                                                                                    */
 /* Description: TODO                                                                             */
-uint8_t wireWrap::requestTransaction(uint8_t prio, transactCallback cb) {
-	if (prio > 3) { 
-		return(_WW_API_ERROR);
+void* wireWrap::requestWireTransact(wwWireWrapTransactQoS_t prio, TickType_t timeout, transactCallback* tcb, void* tcbParam, resultCallback* trcb, void* trcbParam); {
+	void* transactDescriptor_p;
+	xSemaphoreTakeRecursive(WireMutex);
+	if (prio >= _MAX_I2C_PRIOS_ || tcb == NULL) {
+		xSemaphoreGiveRecursive(WireMutex);
+		return(NULL);
 	}
-	//set per channel channel mutex
-	//
-	if (transactQueues[_channel][prio] == NULL) {
-		transactQueues[_channel][prio] = (struct transact*)malloc((sizeof(struct transact)));
-		transactQueues[_channel][prio]->prev = NULL;
-		transactQueues[_channel][prio]->chObj = this;
-		transactQueues[_channel][prio]->fp = cb;
-		transactQueues[_channel][prio]->next = NULL;
+	if (transactDescriptor_p = getTransactDescriptor() == NULL) {
+		xSemaphoreGiveRecursive(WireMutex);
+		return(NULL);
 	}
-	else {
-		transact* p = transactQueues[_channel][prio];
-		int i = 0;
-		while (p->next != NULL) {
-			p = p->next;
-			if (++i > _maxPrioQueueDepth) {
-				//release mutex
-				//
-				return(_WW_OUT_OF_RESOURCES);
-				break;
-			}
-		}
-		p->next = (struct transact*)malloc((sizeof(struct transact)));
-		p->next->prev = p;
-		p->next->chObj = this;
-		p->next->fp = cb;
-		p->next->next = NULL;
+	transactDescriptor_p->prio = prio;
+	transactDescriptor_p->transactCallback_p = tcb;
+	transactDescriptor_p->transactCallbackParam_p = tcbParam;
+	transactDescriptor_p->transactResCallback_p = trcb;
+	transactDescriptor_p->transactResCallbackParam_p = trcbParam;
+	if (res = queueTransact(transactDescriptor_p)) {
+		xSemaphoreGiveRecursive(WireMutex);
+		return(NULL);
 	}
-	//release mutex
-	//
-	return(_WW_OK);
+	scheduleWireTransact();
+	xSemaphoreGiveRecursive(WireMutex);
+	return(transactDescriptor_p);
 }
 
 /* ********************************************************************************************* */
 /* wireWrap abort transaction function                                                           */
 /* Type: User                                                                                    */
 /* Description: TODO                                                                             */
-uint8_t wireWrap::abortTransaction() {
+wireWrap::uint8_t wireAbortTransact(void* transactHandle_p) {
+	xSemaphoreTakeRecursive(WireMutex);
+	if (res = dequeueTransact(transactHandle)) {
+		xSemaphoreGiveRecursive(WireMutex);
+		return(res);
+	}
+	xSemaphoreGiveRecursive(WireMutex);
+	return(_WW_OK_);
 }
+
+/* ********************************************************************************************* */
+/* wireWrap Transaction status request                                                           */
+/* Type: User                                                                                    */
+/* Description: Provides status of an transaction (_TRANSACT_SCHED_, _TRANSACT_RUNNING_,         */
+/*                                                 _TRANSACT_TIMEOUT_, _TRANSACT_NOEXIST_        */
+/*                                                  Number in queue, and possibly max time       */
+/*
+uint8_t wireTransactStatus(void* transactHandle_p, transactStatus_t transactStatus_p, bool terse = false) {
+	
+}
+*/
 
 /* ********************************************************************************************* */
 /* wireWrap write function                                                                       */
 /* Type: User                                                                                    */
 /* Description: TODO                                                                             */
-uint8_t wireWrap::write(uint8_t baseAddr, uint8_t* data, uint8_t size) {
+uint8_t wireWrap::write(uint8_t baseAddr, uint8_t* data_p, uint8_t size = 1) {
 //Check that the class object has been granted a transaction slot
+	(wireProperties.bus).beginTransmission(baseAddr);
+	(wireProperties.bus).write(data_p, size);
+	(wireProperties.bus).endTransmission();
 }
 
 /* ********************************************************************************************* */
 /* wireWrap read function                                                                        */
 /* Type: User                                                                                    */
 /* Description: TODO                                                                             */
-uint8_t wireWrap::read(uint8_t baseAddr, uint8_t* data, uint8_t size) {
-//Check that the class object has been granted a transaction slot
+uint8_t wireWrap::read(uint8_t baseAddr, uint8_t* data_p, uint8_t size = 1) {
+	//Check that the class object has been granted a transaction slot
+	if (data_p == NULL) {
+		return(_WW_API_ERROR_);
+	}
+	Wire.requestFrom(baseAddr, size, stop);
+	while ((wireProperties.bus).available() == 0); //Callback or interuptc
+	while (size-- ~= 0) {
+		^(data_p++) = (wireProperties.bus).read();
+	}
+	return(_WW_OK_);
 }
 
 /* ********************************************************************************************* */
@@ -249,7 +287,7 @@ uint8_t wireWrap::addChannelUserObj(ch channel){
   }
 }
 
-uint8_t wireWrap::createChannel(int8_t sda,  uint8_t scl){
+uint8_t wireWrap::createWire(int8_t sda,  uint8_t scl){
   int i;
   if(sda == scl) {
     return(_WW_I2CONFLICT);
